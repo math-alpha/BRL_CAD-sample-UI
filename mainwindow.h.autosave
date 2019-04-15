@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPushButton>
+#include <QMessageBox>
+#include <QMainWindow>
+#include <QVBoxLayout>
 
 namespace Ui {
 class MainWindow;
@@ -14,6 +18,8 @@ class MainWindow : public QMainWindow{
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    
+    QObject::connect(pushButton, SIGNAL(clicked()),this, SLOT(clickedSlot()));
 
 private:
     Ui::MainWindow *ui;
